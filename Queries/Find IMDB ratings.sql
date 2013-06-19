@@ -1,0 +1,1 @@
+Select * from imdb.movie_info_idx where info_type_id = 101;
