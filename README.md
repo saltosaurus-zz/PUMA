@@ -35,7 +35,9 @@ Takes the weights and the test data (movie information from 2011 and 2012) and c
 ### USAGE
 
 To use the scripts, you must first modify the following line:
+
 	db = MySQLdb.connect(host="", user="", passwd="",db="IMDB")
+	
 Add your host, username and password to the IMDB database copy you are using.  At the command line, enter:
 
 	python dataGet.py
