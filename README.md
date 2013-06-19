@@ -1,11 +1,14 @@
-# PUMA
+# PÜMA
 
 ##Probably Über Movie Advice
 
 ### REQUIREMENTS
 
 #### MySQLdb
-These scripts require MySQLdb to be installed on the machine you're attempting to execute them on.  They also require some mucking about with paths, however I have included code to do this for you. 
+The scripts require MySQLdb to be installed on the machine you're attempting to execute them on.  They also require some mucking about with paths, however I have included code to do this for you. 
+
+#### IMDB Data
+The scripts assume you have access to a local copy of the IMDB databases.  This can be pulled using a variety of methods.  We used IMDBpy.  Secondly we modified the resultant database heavily as described in the wiki.
 
 
 ### STRUCTURE
@@ -27,3 +30,20 @@ Pulls in the data from dataGet and runs the feature vectors through the perceptr
 
 ##### doTests.py
 Takes the weights and the test data (movie information from 2011 and 2012) and computes the prediction performance.
+
+
+### USAGE
+
+To use the scripts, you must first modify the following line:
+	db = MySQLdb.connect(host="", user="", passwd="",db="IMDB")
+Add your host, username and password to the IMDB database copy you are using.  At the command line, enter:
+
+	python dataGet.py
+
+This will execute the data gathering script.  Once this has completed, enter:
+
+	python compWeight.py
+
+This will run the data through the perceptron, computing the resultant weights.  Once you have the weights, determine the prediction error by entering:
+
+	python doTests.py

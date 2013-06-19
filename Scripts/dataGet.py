@@ -12,7 +12,7 @@ import MySQLdb
 import genVect
 
 ## DATABASE CONNECTION DETAILS SHOULD BE BLANK AT COMMIT ##
-db = MySQLdb.connect(host="107.2.93.165", user="salterbw", passwd="Sc00ter007",db="IMDB")
+db = MySQLdb.connect(host="", user="", passwd="",db="IMDB")
 cursor = db.cursor()
 
 # Grabs all of the actors within the timeframe we're looking at (2000 - 2010)
